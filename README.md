@@ -36,15 +36,8 @@ https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combusti
     <tr>
         <td>v1.77</td>
         <td>v3.10.9</td>
-        <td>
-        pandas,
-        glob,
-        os</td>
+        <td> pandas, glob, os</td>
         <td>v2.116.622.0 64-bit</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
     </tr>
 </table>
 
