@@ -1,4 +1,4 @@
-#Licence
+# Licence
 
 https://github.com/JeffersonLCXaxa/Combust-veis-2013-a-2021/blob/main/LICENCE
 
@@ -14,18 +14,18 @@ Os combustíveis desempenham um papel crucial na economia brasileira, afetando o
 Durante a pesquisa utilizei uma fonte confiável de dados, e apliquei técnicas de análise de dados para obter insights sobre o mercado de combustíveis no Brasil. Irei compartilhar com vocês cada um dos detalhes desse projeto ao longo desse readme.
 
 
-#Objetivos do Projeto
+# Objetivos do Projeto
 
 Analisar os dados de compra e venda de combustíveis no Brasil de 2013 a 2021 para identificar variações na comercialização de combustíveis durante o período analisado para apresentar conclusões relevantes do setor de combustíveis.
 
 Utilizei uma abordagem integrada, combinando técnicas de análise de dados com o uso das ferramentas Python e Power BI para realizar a análise.
 
 
-#Fonte de dados(dados públicos)
+# Fonte de dados(dados públicos)
 https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-e-de-glp
 
 
-#Technologies Used:
+# Technologies Used:
 <table>
     <tr>
         <td>Visual Studio Code</td>
