@@ -25,7 +25,7 @@ Utilizei uma abordagem integrada, combinando técnicas de análise de dados com 
 https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-e-de-glp
 
 
-
+#Technologies Used:
 <table>
     <tr>
         <td>Visual Studio Code</td>
