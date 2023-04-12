@@ -1,4 +1,4 @@
-##Licence
+#Licence
 
 https://github.com/JeffersonLCXaxa/Combust-veis-2013-a-2021/blob/main/LICENCE
 
@@ -25,26 +25,28 @@ Utilizei uma abordagem integrada, combinando técnicas de análise de dados com 
 https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-e-de-glp
 
 
-#Editor de código-fonte
 
-- Visual Studio Code v1.77
-
-
-#Back end
-
-- Python v3.10.9
-
-
-#Bibliotecas Python
-
-- Pandas
-- glob
-- os
-
-
-#Front end
-- Microsoft Power BI v2.116.622.0 64-bit
-
+<table>
+    <tr>
+        <td>Visual Studio Code</td>
+        <td>Python</td>
+        <td>Python Library</td>
+        <td>Microsoft Power BI</td>
+    </tr>
+    <tr>
+        <td>v1.77</td>
+        <td>v3.10.9</td>
+        <td>
+        pandas,
+        glob,
+        os</td>
+        <td>v2.116.622.0 64-bit</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
 
 # Combustíveis-2013-a-2021
 Série histórica de preços de combustíveis
