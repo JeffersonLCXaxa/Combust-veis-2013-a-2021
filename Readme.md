@@ -302,3 +302,13 @@ If the link doesn't work, copy and paste it into your browser.
         
         print('The lowest purchase and sale value of the period by product and company that sells fuel:')
         df.groupby(['Bandeira', 'Produto'])['Valor de Compra', 'Valor de Venda'].min()
+
+## How to run this project on your computer
+
+1. Baixe e instale o Python (Recomendo o Anaconda Python, pois já possui os principais bibliotecas instaladas);
+2. Baixe e instale o Visual Studio Code, você também pode executa-lo em uma IDE de sua preferência;
+3. Vá até o site da fonte de dados e baixe todos os arquivos, inclusive os mais atuais, se preferir, não necessitando ser de 2013 a 2021;
+4. Baixe o arquivo Combustiveis.py, nesse repositório do GitHub;
+5. Com o arquivo Combustiveis.py aberto, altere o caminho da variável "diretorio = r'C:\Users\jeffe\Desktop\Dados_Publicos\Combustiveis'" para o caminho da pasta onde você deixou seus aquivos fonte.
+6. Agora altere a variável "destino = 'C:/Users/jeffe/Desktop/Dados_Publicos'" para o caminho da pasta que você deseja que os arquivos transformados sejam criados;
+7. Execute todo o algorítmo de Combustiveis.py.
