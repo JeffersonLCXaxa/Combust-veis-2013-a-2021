@@ -49,7 +49,6 @@ import pandas as pd
 import glob
 import os
 
-
 """--------------------------------------------EXTRAINDO OS DATASETS--------------------------------------------"""
 
 ### Lista vazia
