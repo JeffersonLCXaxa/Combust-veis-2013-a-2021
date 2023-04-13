@@ -51,127 +51,106 @@ import glob
 
 import os
 
-
-
 ### Datasets extracting
 
 ### Empty list
 dados = []
 
-
-
 ### Directory of csv files
 diretorio = r'C:\Users\jeffe\Desktop\Dados_Publicos\Combustiveis'
 
-
-
 ### Geting list of csv files in directory
 arquivos_csv = glob.glob(os.path.join(diretorio, '*.csv'))
-
-
 
 ### Reading all csv files
 for arquivo in arquivos_csv:
     dfs = pd.read_csv(arquivo, delimiter=';')
     dados.append(dfs)
 
-
-
 ### Concatenates all csv files in df variable
 df = pd.concat(dados, ignore_index=True)
 
+## Exploratory analysis
 
-
-"""--------------------------------------------ANÁLISE EXPLORATÓRIA-------------------------------------------
-
-
-### Retorna a quantidade de linhas e colunas
+### Returns the number of rows and columns
 df.shape
 
-### Retorna o nome de todas as colunas
+### Returns all colmns name
 [nome_coluna for nome_coluna in df]
 
-### Retorna as o nome das colunas e as 10 primeiras linhas
+### Returns the frist 10 row names
 df.head(10)
 
-### Retorna o tipo de cada coluna
+### Returns the type of each column
 df.dtypes
 
-### Retorna o total de celulas em branco em cada coluna
+### Returns the total number of blank cells in each column
 df.isnull().sum()
 
-### Retorna os valores distintos da coluna Regiao
+### Returns the distinct values of the Region column
 df['Regiao - Sigla'].unique()
 
-"""
+## Transforming the data
 
-"""-------------------------------------------TRANSFORMANDO OS DADOS------------------------------------------"""
-
-
-### Renomeia colunas
+### Rename columns
 df.rename(columns={'Regiao - Sigla':'Regiao', 'Estado - Sigla':'Estado'}, inplace = True)
 
-### Substitui siglas pelo nome da região
+### Replaces abbreviations with the name of the region
 regioes = {'N':'Norte', 'NE':'Nordeste', 'CO':'Centro-Oeste', 'S':'Sudeste', 'SE':'Suldeste'}
 df['Regiao'] = df['Regiao'].replace(regioes)
 
-### Substitui o separador decimal de "," para "."
+### Replace the decimal separator "," with "."
 df['Valor de Compra'] = df['Valor de Compra'].str.replace(',', '.').astype(float)
 df['Valor de Venda'] = df['Valor de Venda'].str.replace(',', '.').astype(float)
 
-### Converte o tipo da coluna de str para float
+### Convert column type from "str" to "float"
 df['Valor de Venda'] = (df['Valor de Venda'].astype(float))
 df['Valor de Compra'] = (df['Valor de Compra'].astype(float))
 
-### Cria a coluna Margem de Lucro com 2 casas decimais
+### Creates the Profit Margin column with 2 decimal places
 df['Margem de Lucro'] = (((df['Valor de Venda'] - df['Valor de Compra']) / df['Valor de Venda']) * 100).round(2)
 
-### Arredonda as casas decimais das colunas especificadas
+### Rounds the decimal places of the specified columns
 df[['Valor de Compra', 'Valor de Venda']] = df[['Valor de Compra', 'Valor de Venda']].round(2)
 
-### Substitui as celulas vazias da coluna
+### Replace empty cells in column
 df['Complemento'].fillna('Não informado', inplace=True)
 
-### Subistitui as celulas vazias e altera o tipo
+### Replace empty cells and change type
 df[['Valor de Compra', 'Numero Rua', 'Margem de Lucro', 'Valor de Venda']] = df[['Valor de Compra', 'Numero Rua', 'Margem de Lucro', 'Valor de Venda']].fillna(float(0))
 
-### Converte os valores da coluna para strings
+### Convert column values to strings
 df['Bairro'] = df['Bairro'].astype(str)
 
-### Coloca 'Não informado' nas celulas que possuem apenas caracteres não alfanumericos ou vazio
+### Put 'Não informado' in cells that have only non-alphanumeric or empty characters
 df['Bairro'] = df['Bairro'].apply(lambda x: 'Não informado' if (not x.strip()) or not x.isalnum() else x)
 
-### Subistitui as celulas vazias
+### Replace the empty cells
 df['Unidade de Medida'].fillna('R$ / litro', inplace=True)
 df.drop(df[df['Bandeira'].isnull()].index, inplace=True)
 
+## Splitting and creating new files
 
-
-
-"""-----------------------------------Dividindo e criando novos arquivos-----------------------------------------
-
-
-### Número de linhas para processar em cada parte
+### Number of lines to process in each part
 tamanho = 1000000
 
-### Dividir o DataFrame em partes menores
+### Split DataFrame into smaller parts
 partes = [df[i:i + tamanho] for i in range(0, len(df), tamanho)]
 
-### Diretório de saída para os arquivos CSV
+### Output directory for csv files
 destino = 'C:/Users/jeffe/Desktop/Dados_Publicos'
 
-### Loop para processar e salvar as partes em arquivos CSV separados
+### To process and save the parts in separate CSV files
 for i, df_parte in enumerate(partes, 1):
 
     ### Salvar parte em um novo arquivo CSV
     caminho_saida = os.path.join(destino, f'Combustiveis_{i}.csv')
     df_parte.to_csv(caminho_saida, index=False)
 
-### Informa a conclusão da criação dos arquivos
+### Reports completion of file creation
 print(f'Arquivo exportado para {destino}')
-"""
 
-"""--------------------------------PERGUNTAS DE NEGÓCIO / EXTRAÇÃO DE INFORMAÇÕES-----------------------------"""
+## Business Questions / Information Extraction
 
 ### 1 - Qual a maior, a média e a menor Margem de Lucro de todo o período por produto?
 
@@ -204,8 +183,6 @@ df.loc[df['Margem de Lucro'].idxmin(), ['CNPJ da Revenda', 'Margem de Lucro']], 
 df.loc[df['Margem de Lucro'].idxmax(), ['Bandeira', 'Margem de Lucro']], df['Margem de Lucro'].max()
 df['Margem de Lucro'].groupby(df['Bandeira']).mean().round(2)
 df.loc[df['Margem de Lucro'].idxmin(), ['Bandeira', 'Margem de Lucro']], df['Margem de Lucro'].min()
-
-
 
 ### 2 - Qual o maior, a média e o menor Valor de Compra e Valor de Venda de todo o período por produto?
 
