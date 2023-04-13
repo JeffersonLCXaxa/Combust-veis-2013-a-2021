@@ -44,6 +44,7 @@ https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combusti
 ## Combustíveis-2013-a-2021
 
 ### Importando bibliotecas
+
 import pandas as pd
 import glob
 import os
