@@ -305,10 +305,12 @@ If the link doesn't work, copy and paste it into your browser.
 
 ## How to run this project on your computer
 
-1. Baixe e instale o Python (Recomendo o Anaconda Python, pois já possui os principais bibliotecas instaladas);
-2. Baixe e instale o Visual Studio Code, você também pode executa-lo em uma IDE de sua preferência;
-3. Vá até o site da fonte de dados e baixe todos os arquivos, inclusive os mais atuais, se preferir, não necessitando ser de 2013 a 2021;
-4. Baixe o arquivo Combustiveis.py, nesse repositório do GitHub;
-5. Com o arquivo Combustiveis.py aberto, altere o caminho da variável "diretorio = r'C:\Users\jeffe\Desktop\Dados_Publicos\Combustiveis'" para o caminho da pasta onde você deixou seus aquivos fonte.
-6. Agora altere a variável "destino = 'C:/Users/jeffe/Desktop/Dados_Publicos'" para o caminho da pasta que você deseja que os arquivos transformados sejam criados;
-7. Execute todo o algorítmo de Combustiveis.py.
+1. Download and install Python (I recommend Anaconda Python, as it already has the main libraries installed);
+2. Download and install Visual Studio Code, you can also run it in an IDE of your choice;
+3. Go to the data source website and download all files, including the most current ones, if you prefer, not needing to be from 2013 to 2021;
+4. Download the Combustiveis.py file from this GitHub repository;
+5. With the file Combustiveis.py open, change the path of the variable "directory = r'C:\Users\jeffe\Desktop\Dados_Publicos\Combustiveis'" to the path of the folder where you left your source files.
+6. Now change the variable "destination = 'C:/Users/jeffe/Desktop/Dados_Publicos'" to the path of the folder where you want the transformed files to be created;
+7. Run the entire algorithm from Combustiveis.py.
+
+At the end of the run, you will be shown all the questions followed by your answer based on the data. In addition, we will have the destination folder with csv files in parts of up to 1 million lines, each one, treated and ready to be used as a data source for the Microsoft Power BI Dashboard, which will update its information automatically when it starts.
