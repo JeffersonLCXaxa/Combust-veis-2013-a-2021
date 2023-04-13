@@ -43,7 +43,7 @@ https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combusti
 
 ## Combustíveis-2013-a-2021
 
-### Importando bibliotecas
+### Library importing
 
 import pandas as pd
 
@@ -51,23 +51,23 @@ import glob
 
 import os
 
-"""--------------------------------------------EXTRAINDO OS DATASETS--------------------------------------------"""
+### Datasets extracting
 
-### Lista vazia
+### Empty list
 dados = []
 
-### Diretório dos arquivos CSV
+### Directory of csv files
 diretorio = r'C:\Users\jeffe\Desktop\Dados_Publicos\Combustiveis'
 
-### Obter a lista de arquivos CSV no diretório
+### Geting list of csv files in directory
 arquivos_csv = glob.glob(os.path.join(diretorio, '*.csv'))
 
-### Loop para ler todos os arquivos CSV
+### Reading all csv files
 for arquivo in arquivos_csv:
     dfs = pd.read_csv(arquivo, delimiter=';')
     dados.append(dfs)
 
-### Concatena todos os arquivos CSV em um arquivo só: "df"
+### Concatenates all csv files in df variable
 df = pd.concat(dados, ignore_index=True)
 
 
