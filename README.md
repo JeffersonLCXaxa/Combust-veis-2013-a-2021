@@ -1,3 +1,5 @@
+![header](https://cbie.com.br/storage/2019/03/MKT_2019_imagem_destacada_voce_sabia_quantas_plataformas_de_petroleo_v2.jpg)
+
 ## Licence
 
 https://github.com/JeffersonLCXaxa/Combust-veis-2013-a-2021/blob/main/LICENCE
