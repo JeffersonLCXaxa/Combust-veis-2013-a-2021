@@ -181,58 +181,104 @@ If the link doesn't work, copy and paste it into your browser.
 
 - In the country
         
+        print('The highest profit margin for the period by product:')
         df['Margem de Lucro'].groupby(df['Produto']).max()
+        
+        print('The average profit margin for the period by product:')
         df['Margem de Lucro'].groupby(df['Produto']).mean().round(2)
+        
+        print('The lowest profit margin for the period by product:')
         df['Margem de Lucro'].groupby(df['Produto']).min()
 
 - By region
         
+        
+        print('The highest profit margin for the period by product and region:')
         df.groupby(['Regiao', 'Produto'])['Margem de Lucro'].max()
+        
+        print('Average profit margin for the period by product and region:')
         df.groupby(['Regiao', 'Produto'])['Margem de Lucro'].mean().round(2)
+        
+        print('The lowest profit margin for the period by product and region:')
         df.groupby(['Regiao', 'Produto'])['Margem de Lucro'].min()
 
 - By state
         
+        print('The highest profit margin for the period by state and product:')
         df.groupby(['Estado', 'Produto'])['Margem de Lucro'].max()
+        
+        print('Average profit margin for the period by state and product:')
         df.groupby(['Estado', 'Produto'])['Margem de Lucro'].mean().round(2)
+        
+        print('The lowest profit margin for the period by state and product:')
         df.groupby(['Estado', 'Produto'])['Margem de Lucro'].min()
 
 - By city
         
+        print('The city with the highest profit margin in the period:')
         df.loc[df['Margem de Lucro'].idxmax(), ['Municipio', 'Estado', 'Margem de Lucro']], df['Margem de Lucro'].max()
+        
+        print('The average profit margin for the period by city:')
         df['Margem de Lucro'].groupby(df['Municipio']).mean().round(2)
+        
+        print('The city with the lowest profit margin in the period:')
         df.loc[df['Margem de Lucro'].idxmin(), ['Municipio', 'Estado', 'Margem de Lucro']], df['Margem de Lucro'].min()
 
 - By CNPJ/National Register of Legal Entities
         
+        print('The company with the highest profit margin for the period:')
         df.loc[df['Margem de Lucro'].idxmax(), ['CNPJ da Revenda', 'Margem de Lucro']], df['Margem de Lucro'].max()
+        
+        print('The average profit margin for the period by company:')
         df['Margem de Lucro'].groupby(df['CNPJ da Revenda']).mean().round(2)
+        
+        print('The company with the lowest profit margin for the period:')
         df.loc[df['Margem de Lucro'].idxmin(), ['CNPJ da Revenda', 'Margem de Lucro']], df['Margem de Lucro'].min()
 
 - By company that sells fuel
         
+        print('The company that sells fuel with the highest profit margin for the period:')
         df.loc[df['Margem de Lucro'].idxmax(), ['Bandeira', 'Margem de Lucro']], df['Margem de Lucro'].max()
+        
+        print('The average profit margin for the period by company that sells fuel:')
         df['Margem de Lucro'].groupby(df['Bandeira']).mean().round(2)
+        
+        print('The company that sells fuel with the lowest profit margin for the period:')
         df.loc[df['Margem de Lucro'].idxmin(), ['Bandeira', 'Margem de Lucro']], df['Margem de Lucro'].min()
 
 ### 2 - What is the highest, average and lowest Purchase Value and Sale Value for the entire period by product?
 
 - The country
         
+        print('The highest purchase and sale value of the period per product:')
         df.groupby(df['Produto'])['Valor de Compra', 'Valor de Venda'].max()
+        
+        print('Average purchase and sale value for the period per product:')
         df.groupby(df['Produto'])['Valor de Compra', 'Valor de Venda'].mean().round(2)
+        
+        print('The lowest purchase and sale value of the period per product:')
         df.groupby(df['Produto'])['Valor de Compra', 'Valor de Venda'].min()
 
 - By state
         
+        print('The highest purchase and sale value of the period by product and state:')
         df.groupby(['Estado', 'Produto'])['Valor de Compra', 'Valor de Venda'].max()
+        
+        print('Average purchase and sale value for the period by product and state:')
         df.groupby(['Estado', 'Produto'])['Valor de Compra', 'Valor de Venda'].mean().round(2)
+        
+        print('The lowest purchase and sale value of the period by product and state:')
         df.groupby(['Estado', 'Produto'])['Valor de Compra', 'Valor de Venda'].min()
 
 - By city
         
+        print('The highest purchase and sale value of the period by product and city:')
         df.groupby(['Municipio', 'Produto'])['Valor de Compra', 'Valor de Venda'].max()
+        
+        print('Average purchase and sale value for the period by product and city:')
         df.groupby(['Municipio', 'Produto'])['Valor de Compra', 'Valor de Venda'].mean().round(2)
+        
+        print('The lowest purchase and sale value of the period by product and city:')
         df.groupby(['Municipio', 'Produto'])['Valor de Compra', 'Valor de Venda'].min()
 
 - By CNPJ/National Register of Legal Entities
@@ -256,68 +302,3 @@ If the link doesn't work, copy and paste it into your browser.
         
         print('The lowest purchase and sale value of the period by product and company that sells fuel:')
         df.groupby(['Bandeira', 'Produto'])['Valor de Compra', 'Valor de Venda'].min()
-
-#In the country
-print('The highest profit margin for the period by product:')
-
-print('The average profit margin for the period by product:')
-
-print('The lowest profit margin for the period by product:')
-
-#1.1 - By Region
-print('The highest profit margin for the period by product and region:')
-
-print('Average profit margin for the period by product and region:')
-
-print('The lowest profit margin for the period by product and region:')
-
-#1.2 - By State
-print('The highest profit margin for the period by state and product:')
-
-print('Average profit margin for the period by state and product:')
-
-print('The lowest profit margin for the period by state and product:')
-
-#1.3 - By Municipality
-print('The municipality with the highest profit margin in the period:')
-
-print('The average profit margin for the period by municipality:')
-
-print('The municipality with the lowest profit margin in the period:')
-
-#1.4 - By CNPJ
-print('The company with the highest profit margin for the period:')
-
-print('The average profit margin for the period by company:')
-
-print('The company with the lowest profit margin for the period:')
-
-#1.5 - By Flag
-print('The flag with the highest profit margin for the period:')
-
-print('The average profit margin for the period by flag:')
-
-print('The company with the lowest profit margin for the period:')
-
-#2 - What is the highest, average and lowest Purchase Value and Sale Value of the entire period per product?
-
-#2.1 - In the Country
-print('The highest purchase and sale value of the period per product:')
-
-print('Average purchase and sale value for the period per product:')
-
-print('The lowest purchase and sale value of the period per product:')
-
-#2.2 - By State
-print('The highest purchase and sale value of the period by product and state:')
-
-print('Average purchase and sale value for the period by product and state:')
-
-print('The lowest purchase and sale value of the period by product and state:')
-
-#2.3 - By Municipality
-print('The highest purchase and sale value of the period by product and municipality:')
-
-print('Average purchase and sale value for the period by product and municipality:')
-
-print('The lowest purchase and sale value of the period by product and municipality:')
