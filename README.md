@@ -46,7 +46,9 @@ https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combusti
 ### Importando bibliotecas
 
 import pandas as pd
+
 import glob
+
 import os
 
 """--------------------------------------------EXTRAINDO OS DATASETS--------------------------------------------"""
