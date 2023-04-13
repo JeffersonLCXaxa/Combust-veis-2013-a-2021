@@ -314,3 +314,9 @@ If the link doesn't work, copy and paste it into your browser.
 7. Run the entire algorithm from Combustiveis.py.
 
 At the end of the run, you will be shown all the questions followed by your answer based on the data. In addition, we will have the destination folder with csv files in parts of up to 1 million lines, each one, treated and ready to be used as a data source for the Microsoft Power BI Dashboard, which will update its information automatically when it starts.
+
+## Project authorship
+
+Jefferson Luiz da Costa Xaxá
+
+LinkedIn: https://www.linkedin.com/in/jefferson-xax%C3%A1-815516b0/
