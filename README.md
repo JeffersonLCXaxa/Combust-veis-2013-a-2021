@@ -3,27 +3,26 @@
 https://github.com/JeffersonLCXaxa/Combust-veis-2013-a-2021/blob/main/LICENCE
 
 
-## Sobre o projeto
+## About the project
 
-Combustíveis: Compra e Venda no Brasil de 2013 a 2021
+Fuels: Purchase and Sale in Brazil from 2013 to 2021
 
-Neste projeto, analisei dados relevantes sobre a compra e venda de combustíveis no Brasil ao longo de um período de nove anos, abrangendo de 2013 a 2021.
+In this project, I analyzed relevant data on the purchase and sale of fuels in Brazil over a nine-year period, spanning from 2013 to 2021.
 
-Os combustíveis desempenham um papel crucial na economia brasileira, afetando os setores de transporte, indústria e comércio. Compreender as tendências e os fatores que influenciam o mercado de combustíveis é de extrema importância para empresas, governos, consumidores e demais interessados no setor.
+Fuels play a crucial role in the Brazilian economy, affecting the transport, industry and commerce sectors. Understanding the trends and factors that influence the fuel market is extremely important for companies, governments, consumers and other stakeholders in the sector.
 
-Durante a pesquisa utilizei uma fonte confiável de dados, e apliquei técnicas de análise de dados para obter insights sobre o mercado de combustíveis no Brasil. Irei compartilhar com vocês cada um dos detalhes desse projeto ao longo desse readme.
+## Project objectives
 
+Analyze fuel purchase and sale data in Brazil from 2013 to 2021 to identify variations in fuel sales during the analyzed period to present relevant conclusions for the fuel sector.
 
-## Objetivos do Projeto
-
-Analisar os dados de compra e venda de combustíveis no Brasil de 2013 a 2021 para identificar variações na comercialização de combustíveis durante o período analisado para apresentar conclusões relevantes do setor de combustíveis.
-
-Utilizei uma abordagem integrada, combinando técnicas de análise de dados com o uso das ferramentas Python e Power BI para realizar a análise.
+I used an integrated approach, combining data analysis techniques with the use of Python and Power BI tools to perform the analysis.
 
 
-## Fonte de dados(dados públicos)
+## Data source (public data)
+
 https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-e-de-glp
 
+If the link doesn't work, copy and paste it into your browser.
 
 ## Technologies Used:
 <table>
@@ -41,7 +40,7 @@ https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combusti
     </tr>
 </table>
 
-## Combustíveis-2013-a-2021
+## Fuels: Purchase and Sale in Brazil from 2013 to 2021
 
 ### Library importing
 
