@@ -142,71 +142,69 @@ destino = 'C:/Users/jeffe/Desktop/Dados_Publicos'
 
 ### To process and save the parts in separate CSV files
 for i, df_parte in enumerate(partes, 1):
-
-    ### Salvar parte em um novo arquivo CSV
     caminho_saida = os.path.join(destino, f'Combustiveis_{i}.csv')
     df_parte.to_csv(caminho_saida, index=False)
 
 ### Reports completion of file creation
 print(f'Arquivo exportado para {destino}')
 
-## Business Questions / Information Extraction
+## Business questions
 
-### 1 - Qual a maior, a média e a menor Margem de Lucro de todo o período por produto?
+### 1 - What is the highest, average and lowest Profit Margin for the entire period by product?
 
-#No País
+#In the country
 df['Margem de Lucro'].groupby(df['Produto']).max()
 df['Margem de Lucro'].groupby(df['Produto']).mean().round(2)
 df['Margem de Lucro'].groupby(df['Produto']).min()
 
-### 1.1 - Por Região
+### 1.1 - By region
 df.groupby(['Regiao', 'Produto'])['Margem de Lucro'].max()
 df.groupby(['Regiao', 'Produto'])['Margem de Lucro'].mean().round(2)
 df.groupby(['Regiao', 'Produto'])['Margem de Lucro'].min()
 
-### 1.2 - Por Estado
+### 1.2 - By state
 df.groupby(['Estado', 'Produto'])['Margem de Lucro'].max()
 df.groupby(['Estado', 'Produto'])['Margem de Lucro'].mean().round(2)
 df.groupby(['Estado', 'Produto'])['Margem de Lucro'].min()
 
-### 1.3 - Por Municipio
+### 1.3 - By city
 df.loc[df['Margem de Lucro'].idxmax(), ['Municipio', 'Estado', 'Margem de Lucro']], df['Margem de Lucro'].max()
 df['Margem de Lucro'].groupby(df['Municipio']).mean().round(2)
 df.loc[df['Margem de Lucro'].idxmin(), ['Municipio', 'Estado', 'Margem de Lucro']], df['Margem de Lucro'].min()
 
-### 1.4 - Por CNPJ
+### 1.4 - By CNPJ/National Register of Legal Entities
 df.loc[df['Margem de Lucro'].idxmax(), ['CNPJ da Revenda', 'Margem de Lucro']], df['Margem de Lucro'].max()
 df['Margem de Lucro'].groupby(df['CNPJ da Revenda']).mean().round(2)
 df.loc[df['Margem de Lucro'].idxmin(), ['CNPJ da Revenda', 'Margem de Lucro']], df['Margem de Lucro'].min()
 
-### 1.5 - Por Bandeira
+### 1.5 - By company that sells fuel
 df.loc[df['Margem de Lucro'].idxmax(), ['Bandeira', 'Margem de Lucro']], df['Margem de Lucro'].max()
 df['Margem de Lucro'].groupby(df['Bandeira']).mean().round(2)
 df.loc[df['Margem de Lucro'].idxmin(), ['Bandeira', 'Margem de Lucro']], df['Margem de Lucro'].min()
 
-### 2 - Qual o maior, a média e o menor Valor de Compra e Valor de Venda de todo o período por produto?
+### 2 - What is the highest, average and lowest Purchase Value and Sale Value for the entire period by product?
 
-### 2.1 - No País
+### 2.1 - The country
 df.groupby(df['Produto'])['Valor de Compra', 'Valor de Venda'].max()
 df.groupby(df['Produto'])['Valor de Compra', 'Valor de Venda'].mean().round(2)
 df.groupby(df['Produto'])['Valor de Compra', 'Valor de Venda'].min()
 
-### 2.2 - Por Estado
+### 2.2 - By state
 df.groupby(['Estado', 'Produto'])['Valor de Compra', 'Valor de Venda'].max()
 df.groupby(['Estado', 'Produto'])['Valor de Compra', 'Valor de Venda'].mean().round(2)
 df.groupby(['Estado', 'Produto'])['Valor de Compra', 'Valor de Venda'].min()
 
-### 2.3 - Por Município
+### 2.3 - By city
 df.groupby(['Municipio', 'Produto'])['Valor de Compra', 'Valor de Venda'].max()
 df.groupby(['Municipio', 'Produto'])['Valor de Compra', 'Valor de Venda'].mean().round(2)
 df.groupby(['Municipio', 'Produto'])['Valor de Compra', 'Valor de Venda'].min()
 
-### 2.4 - Por CNPJ
+### 2.4 - By CNPJ/National Register of Legal Entities
 df.groupby(['CNPJ da Revenda', 'Produto'])['Valor de Compra', 'Valor de Venda'].max()
 df.groupby(['CNPJ da Revenda', 'Produto'])['Valor de Compra', 'Valor de Venda'].mean().round(2)
 df.groupby(['CNPJ da Revenda', 'Produto'])['Valor de Compra', 'Valor de Venda'].min()
 
-### 2.5 - Por Bandeira
+### 2.5 - By company that sells fuel
 df.groupby(['Bandeira', 'Produto'])['Valor de Compra', 'Valor de Venda'].max()
 df.groupby(['Bandeira', 'Produto'])['Valor de Compra', 'Valor de Venda'].mean().round(2)
 df.groupby(['Bandeira', 'Produto'])['Valor de Compra', 'Valor de Venda'].min()
