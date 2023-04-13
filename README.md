@@ -52,18 +52,22 @@ import glob
 import os
 
 
+
 ### Datasets extracting
 
 ### Empty list
 dados = []
 
 
+
 ### Directory of csv files
 diretorio = r'C:\Users\jeffe\Desktop\Dados_Publicos\Combustiveis'
 
 
+
 ### Geting list of csv files in directory
 arquivos_csv = glob.glob(os.path.join(diretorio, '*.csv'))
+
 
 
 ### Reading all csv files
@@ -72,8 +76,10 @@ for arquivo in arquivos_csv:
     dados.append(dfs)
 
 
+
 ### Concatenates all csv files in df variable
 df = pd.concat(dados, ignore_index=True)
+
 
 
 """--------------------------------------------ANÁLISE EXPLORATÓRIA-------------------------------------------
