@@ -9,7 +9,7 @@ https://github.com/JeffersonLCXaxa/Fuels-Purchase-and-Sale-in-Brazil-from-2013-t
 
 ## About the project
 
-Fuels: Purchase and Sale in Brazil from 2013 to 2021
+Fuels: Purchase and Sale in Brazil from 2013 to 2020
 
 In this project, I analyzed relevant data on the purchase and sale of fuels in Brazil over a nine-year period, spanning from 2013 to 2021.
 
@@ -17,7 +17,7 @@ Fuels play a crucial role in the Brazilian economy, affecting the transport, ind
 
 ## Project objectives
 
-Analyze fuel purchase and sale data in Brazil from 2013 to 2021 to identify variations in fuel sales during the analyzed period to present relevant conclusions for the fuel sector.
+Analyze fuel purchase and sale data in Brazil from 2013 to 2020 to identify variations in fuel sales during the analyzed period to present relevant conclusions for the fuel sector.
 
 I used an integrated approach, combining data analysis techniques with the use of Python and Power BI tools to perform the analysis.
 
